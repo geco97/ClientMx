@@ -158,13 +158,6 @@ export default (state = INIT_STATE, action) => {
         userEvent:action.payload.results.userEvent
       }
     }
-    //GET_STATISTIC
-    case GET_STATISTIC:{
-      return {
-        ...state,
-        userStatistic:action.payload.results.userStatistic
-      }
-    }
     //userStatistic
     //GET_USER_WORKING_YEARS
     case GET_USER_WORKING_YEARS:{

@@ -8,7 +8,6 @@ import makeStyles from '@material-ui/core/styles/makeStyles';
 import {isEmpty} from 'lodash'
 import AppTextInput from '@jumbo/components/Common/formElements/AppTextInput';
 import { useDispatch, useSelector } from 'react-redux';
-import { getMilersattningthisMonth,updateMilersattningthisMonth } from 'redux/actions'
 import moment from 'moment';
 import CheckIcon from '@material-ui/icons/Check';
 import KlarPopUp from './KlarPopUp'
@@ -87,14 +86,12 @@ function HeaderStatistic(props) {
         setopenFyllaPopUp(false)
     }
     React.useEffect(()=>{
-        dispatch(getMilersattningthisMonth(authUser.id,moment(props.CurrentDate).format("YYYY-MM-DD")))
     },[props.CurrentDate])
     React.useEffect(()=>{
         setMilersattning(SMilersattning)
     },[SMilersattning])
     const updateMillersattning=()=>{
         console.log(Milersattning)
-        dispatch(updateMilersattningthisMonth(authUser.id,moment(props.CurrentDate).format("YYYY-MM-DD"),Milersattning))
     }
     return (
         <div style={{padding:2}}>
